@@ -1,0 +1,43 @@
+<div id="new_worker" class="container">
+  <div class="col-sm-4"></div>
+  <div id="form_for_new_worker" class="col-sm-4">
+    <%= form_for @worker, url: {action: 'create'} do |f| %>
+
+      <div id="firstname" class="row">
+        <%= label_tag :firstname, "Firstname: " %>
+        <%= f.text_field :firstname %>
+      </div>
+
+      <div id="sirname" class="row">
+        <%= label_tag :sirname, "Sirname: " %>
+        <%= f.text_field :sirname %>
+      </div>
+
+      <div id="educational_background" class="row">
+        <%= label_tag :educational_background, "Education: " %>
+        <%= f.text_field :educational_background %>
+      </div>
+
+      <div id="work_background" class="row">
+        <%= label_tag :work_background, "Work experience: " %>
+        <%= f.text_field :work_background %>
+      </div>
+
+      <div id="age" class="row">
+        <%= label_tag :age, "Age: " %>
+        <%= f.number_field :age, min: 18, max: 80, step: 1 %>
+      </div>
+
+      <div id="native_city" class="row">
+        <%= label_tag :native_city, "Native city: " %>
+        <%= f.text_field :native_city %>
+      </div>
+
+      <div id="create_button" class="row">
+        <br>
+        <%= f.submit :create %>
+      </div>
+    <% end %>
+  </div>
+  <div class="col-sm-4"></div>
+</div>

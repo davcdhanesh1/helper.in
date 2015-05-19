@@ -1,0 +1,15 @@
+// Place all the styles related to the workers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#form_for_new_worker{
+  margin-top: 1%;
+  label {
+    text-align: left;
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+  }
+} 
