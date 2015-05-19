@@ -11,8 +11,14 @@ class WorkersController < ApplicationController
   end
 
   def create
-    @worker = Worker.create(validate_params_for_creation) 
-    redirect_to worker_url(@worker)
+    @worker = Worker.new(validate_params_for_creation) 
+    if @worker.valid?
+      @worker.save!
+      redirect_to worker_url(@worker)
+    else 
+      flash.now[:errors] = @worker.errors.full_messages
+      render :new
+    end
   end
 
   private

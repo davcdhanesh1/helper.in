@@ -1,41 +1,42 @@
 <div id="new_worker" class="container">
   <div class="col-sm-4"></div>
+  
   <div id="form_for_new_worker" class="col-sm-4">
     <%= form_for @worker, url: {action: 'create'} do |f| %>
 
       <div id="firstname" class="row">
         <%= label_tag :firstname, "Firstname: " %>
-        <%= f.text_field :firstname %>
+        <%= f.text_field :firstname, :value => @worker.firstname %>
       </div>
 
       <div id="sirname" class="row">
         <%= label_tag :sirname, "Sirname: " %>
-        <%= f.text_field :sirname %>
+        <%= f.text_field :sirname, :value => @worker.sirname %>
       </div>
 
       <div id="educational_background" class="row">
         <%= label_tag :educational_background, "Education: " %>
-        <%= f.text_field :educational_background %>
+        <%= f.text_field :educational_background , :value => @worker.educational_background %>
       </div>
 
       <div id="work_background" class="row">
         <%= label_tag :work_background, "Work experience: " %>
-        <%= f.text_field :work_background %>
+        <%= f.text_field :work_background, :value => @worker.work_background %>
       </div>
 
       <div id="age" class="row">
         <%= label_tag :age, "Age: " %>
-        <%= f.number_field :age, min: 18, max: 80, step: 1 %>
+        <%= f.number_field :age, min: 18, max: 80, step: 1, :value => @worker.age %>
       </div>
 
       <div id="native_city" class="row">
         <%= label_tag :native_city, "Native city: " %>
-        <%= f.text_field :native_city %>
+        <%= f.text_field :native_city, :value => @worker.native_city %>
       </div>
 
       <div id="expertise" class="row">
         <%= label_tag :expertise, "Expertise: " %>
-        <%= f.text_field :expertise %>
+        <%= f.text_field :expertise, :value => @worker.expertise %>
       </div>
 
       <div id="create_button" class="row">
@@ -44,6 +45,16 @@
       </div>
 
     <% end %>
+
+    <% unless flash[:errors].nil? %>
+      <hr>
+      <% flash[:errors].each do |error| %>
+        <p class="error"><b><%=h error %></b></p>
+      <% end %>
+    <% end %>
+
   </div>
+
   <div class="col-sm-4"></div>
+
 </div>

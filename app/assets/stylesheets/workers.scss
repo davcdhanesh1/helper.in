@@ -4,12 +4,15 @@
 
 #form_for_new_worker{
   margin-top: 1%;
+  text-align: center;
+  width: 100%;
+
   label {
-    text-align: left;
+    text-align: center;
     width: 100%;
   }
 
   button {
     width: 100%;
   }
-} 
+}
