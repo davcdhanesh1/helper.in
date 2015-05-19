@@ -18,6 +18,7 @@ class WorkersController < ApplicationController
   private
   
   def validate_params_for_creation
-    params.require(:worker).permit(:firstname, :sirname, :age, :educational_background, :work_background, :native_city)
+    params.require(:worker).permit(:firstname, :sirname, :age, :educational_background, :work_background, :native_city,
+                                   :expertise)
   end
 end
