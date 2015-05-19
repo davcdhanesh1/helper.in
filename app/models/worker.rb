@@ -6,4 +6,7 @@ class Worker < ActiveRecord::Base
   validates :work_background, presence: true
   validates :native_city, presence: true
   validates :expertise, presence: true
+
+  has_one :contact_information
+  accepts_nested_attributes_for :contact_information
 end

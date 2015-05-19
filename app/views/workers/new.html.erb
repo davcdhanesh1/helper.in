@@ -2,6 +2,14 @@
   <div class="col-sm-4"></div>
   
   <div id="form_for_new_worker" class="col-sm-4">
+
+    <% unless flash[:errors].nil? %>
+      <hr>
+      <% flash[:errors].each do |error| %>
+        <p class="error"><b><%=h error %></b></p>
+      <% end %>
+    <% end %>
+
     <%= form_for @worker, url: {action: 'create'} do |f| %>
 
       <div id="firstname" class="row">
@@ -38,20 +46,57 @@
         <%= label_tag :expertise, "Expertise: " %>
         <%= f.text_field :expertise, :value => @worker.expertise %>
       </div>
+      
+      <hr>
+      <div class="row"><b>Contact Information</b></div>
+
+      <%= f.fields_for @worker.contact_information do |ff| %>
+       
+        <div id="line_1" class="row">
+          <%= label_tag :line_1, "Line 1: " %>
+          <%= ff.text_field :line_1, :value => @worker.contact_information.line_1 %>
+        </div>
+
+        <div id="line_2" class="row">
+          <%= label_tag :line_2, "Line 2: " %>
+          <%= ff.text_field :line_2, :value => @worker.contact_information.line_2 %>
+        </div>
+
+        <div id="pincode" class="row">
+          <%= label_tag :pincode, "Pincode: " %>
+          <%= ff.text_field :pincode, :value => @worker.contact_information.pincode %>
+        </div>
+
+        <div id="city" class="row">
+          <%= label_tag :city, "City: " %>
+          <%= ff.text_field :city, :value => @worker.contact_information.city %>
+        </div>
+        
+        <div id="state" class="row">
+          <%= label_tag :state, "State: " %>
+          <%= ff.text_field :state, :value => @worker.contact_information.state %>
+        </div>
+
+        <div id="contact_number" class="row">
+          <%= label_tag :contact_number, "Contact Number: " %>
+          <%= ff.text_field :contact_number, :value => @worker.contact_information.contact_number %>
+        </div>
+
+        <div id="email" class="row">
+          <%= label_tag :email, "Email: " %>
+          <%= ff.text_field :email, :value => @worker.contact_information.email %>
+        </div>
+
+      <% end %>
 
       <div id="create_button" class="row">
         <br>
         <%= f.submit :create %>
       </div>
+     
 
     <% end %>
 
-    <% unless flash[:errors].nil? %>
-      <hr>
-      <% flash[:errors].each do |error| %>
-        <p class="error"><b><%=h error %></b></p>
-      <% end %>
-    <% end %>
 
   </div>
 
