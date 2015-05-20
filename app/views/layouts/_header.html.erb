@@ -2,18 +2,25 @@
   <hr>
   <div class="navbar" id="header">
     <div class="container">
-      <div class="col-sm-4">
-        <div class="navbar-header">
-          <a class="navbar-brand btn btn-primary" href="/">Helper</a>
+      
+      <div class="row">
+        <div class="col-sm-2 center">
+          <a href="/" class="btn btn-lg btn-success"><b>Helper</b></a>
+        </div>
+        <div class="col-sm-6"></div>
+        <div class="col-sm-4">
+          <ul class="nav navbar-nav center">
+            <% if logged_in? %>
+              <li><%= link_to("New worker", new_worker_url) %> </li>
+              <li><%= link_to("Logout", '#') %><li>
+            <% else %>
+                <li><a href="#">How does it work</a></li>
+                <li><a href="#">Contact Us</a></li>
+            <% end %>
+          </ul>
         </div>
       </div>
-      <div class="col-sm-4"></div>
-      <div class="col-sm-4">
-        <ul class="nav navbar-nav">
-          <li><a href="#">How does it work</a></li>
-          <li><a href="#">Advertise with Us</a></li>
-        </ul>
-      </div>
+
     </div>
   </div>
   <hr>

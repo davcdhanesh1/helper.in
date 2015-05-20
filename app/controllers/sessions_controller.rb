@@ -5,8 +5,8 @@ class SessionsController < ApplicationController
   def create
     admin = Admin.find_by(email: params_for_admin_login[:email])
     if admin && admin.authenticate(params_for_admin_login[:password])
-      session[:admin] = admin
-      redirect_to :new_worker
+      log_in(admin)
+      redirect_to :workers
     else
       flash.now[:errors] = ['Invalid email / password combination']
       render :new
