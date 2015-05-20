@@ -14,37 +14,37 @@
 
       <div id="firstname" class="row">
         <%= label_tag :firstname, "Firstname: " %>
-        <%= f.text_field :firstname, :value => @worker.firstname %>
+        <%= f.text_field :firstname %>
       </div>
 
       <div id="sirname" class="row">
         <%= label_tag :sirname, "Sirname: " %>
-        <%= f.text_field :sirname, :value => @worker.sirname %>
+        <%= f.text_field :sirname %>
       </div>
 
       <div id="educational_background" class="row">
         <%= label_tag :educational_background, "Education: " %>
-        <%= f.text_field :educational_background , :value => @worker.educational_background %>
+        <%= f.text_field :educational_background %>
       </div>
 
       <div id="work_background" class="row">
         <%= label_tag :work_background, "Work experience: " %>
-        <%= f.text_field :work_background, :value => @worker.work_background %>
+        <%= f.text_field :work_background %>
       </div>
 
       <div id="age" class="row">
         <%= label_tag :age, "Age: " %>
-        <%= f.number_field :age, min: 18, max: 80, step: 1, :value => @worker.age %>
+        <%= f.number_field :age, min: 18, max: 80, step: 1 %>
       </div>
 
       <div id="native_city" class="row">
         <%= label_tag :native_city, "Native city: " %>
-        <%= f.text_field :native_city, :value => @worker.native_city %>
+        <%= f.text_field :native_city %>
       </div>
 
       <div id="expertise" class="row">
         <%= label_tag :expertise, "Expertise: " %>
-        <%= f.text_field :expertise, :value => @worker.expertise %>
+        <%= f.text_field :expertise %>
       </div>
       
       <hr>
@@ -54,37 +54,37 @@
        
         <div id="line_1" class="row">
           <%= label_tag :line_1, "Line 1: " %>
-          <%= ff.text_field :line_1, :value => @worker.contact_information.line_1 %>
+          <%= ff.text_field :line_1 %>
         </div>
 
         <div id="line_2" class="row">
           <%= label_tag :line_2, "Line 2: " %>
-          <%= ff.text_field :line_2, :value => @worker.contact_information.line_2 %>
+          <%= ff.text_field :line_2 %>
         </div>
 
         <div id="pincode" class="row">
           <%= label_tag :pincode, "Pincode: " %>
-          <%= ff.text_field :pincode, :value => @worker.contact_information.pincode %>
+          <%= ff.text_field :pincode %>
         </div>
 
         <div id="city" class="row">
           <%= label_tag :city, "City: " %>
-          <%= ff.text_field :city, :value => @worker.contact_information.city %>
+          <%= ff.text_field :city %>
         </div>
         
         <div id="state" class="row">
           <%= label_tag :state, "State: " %>
-          <%= ff.text_field :state, :value => @worker.contact_information.state %>
+          <%= ff.text_field :state %>
         </div>
 
         <div id="contact_number" class="row">
           <%= label_tag :contact_number, "Contact Number: " %>
-          <%= ff.text_field :contact_number, :value => @worker.contact_information.contact_number %>
+          <%= ff.text_field :contact_number %>
         </div>
 
         <div id="email" class="row">
           <%= label_tag :email, "Email: " %>
-          <%= ff.text_field :email, :value => @worker.contact_information.email %>
+          <%= ff.text_field :email %>
         </div>
 
       <% end %>
