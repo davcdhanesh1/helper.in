@@ -44,7 +44,7 @@
 
       <div id="expertise" class="row">
         <%= label_tag :expertise, "Expertise: " %>
-        <%= f.text_field :expertise %>
+        <%= f.select(:expertise, Worker.all_expertise) %>
       </div>
       
       <hr>
