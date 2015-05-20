@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  before_action :logged_in_as_admin, only: [:destroy]
+
   def new
   end
 

@@ -1,4 +1,6 @@
 class WorkersController < ApplicationController
+  before_action :logged_in_as_admin, only: [:new, :create]
+
   def index
   end
 
