@@ -4,9 +4,8 @@
   <div id="form_for_new_worker" class="col-sm-4">
 
     <% unless flash[:errors].nil? %>
-      <hr>
       <% flash[:errors].each do |error| %>
-        <p class="error"><b><%=h error %></b></p>
+        <p class="alert alert-danger"><b><%=h error %></b></p>
       <% end %>
     <% end %>
 

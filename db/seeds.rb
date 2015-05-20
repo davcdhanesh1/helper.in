@@ -7,4 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 #
 
-site_admin = Admin.create({name: sexyAdmin, email: sexyadmin@foobar.com, password: !MsexyAdmin, password_confirmation: !MsexyAdmin})
+site_admin = Admin.create({name: "sexyAdmin", 
+                           email: "sexyadmin@foobar.com", 
+                           password: "!MsexyAdmin", 
+                           password_confirmation: "!MsexyAdmin"})

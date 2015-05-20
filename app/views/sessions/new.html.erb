@@ -1,0 +1,33 @@
+<h1>Admin Login</h1>
+<div id="new_session" class="container">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+    <div id="form_for_admin_login" class="container">
+      <% unless flash[:errors].nil? %>
+        <% flash[:errors].each do |error| %>
+          <p class="alert alert-danger"><b><%= h error %></b></p>
+        <% end %>
+      <% end %>
+
+      <%= form_for(:session, url: login_url) do |f| %>
+        <div id="email" class="row">
+          <%= label_tag :email, "Email: " %>
+          <%= f.text_field :email %>
+        </div>
+
+        <div id="password" class="row">
+          <%= label_tag :password, "Password: " %>
+          <%= f.text_field :password %>
+        </div>
+
+        <div id="login" class="row">
+          <br>
+          <%= f.submit :login %>
+        </div> 
+
+      <% end %>
+    </div>
+  </div>
+  <div class="col-sm-4"></div>
+</div>
+
