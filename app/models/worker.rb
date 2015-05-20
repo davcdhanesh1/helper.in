@@ -23,7 +23,7 @@ class Worker < ActiveRecord::Base
        ['Security Guard', 'security-guard'],
        ['Construction Worker', 'construction-worker'],
        ['Driver', 'driver'],
-       ['Cleaners', 'clearner'],
+       ['Cleaners', 'cleaner'],
        ['Raddiwala', 'raddiwala'],
        ['Fabricator', 'fabricator'],
        ['Glass Repair', 'glass-repair'],
