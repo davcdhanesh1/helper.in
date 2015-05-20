@@ -45,7 +45,13 @@
         <%= label_tag :expertise, "Expertise: " %>
         <%= f.select(:expertise, Worker.all_expertise) %>
       </div>
-      
+
+      <hr>
+      <div id="profile_picture" class="row">
+        <%= label_tag :profile_picture, "Profile picture: " %>
+        <%= f.file_field :profile_picture %>
+      </div>
+
       <hr>
       <div class="row"><b>Contact Information</b></div>
 

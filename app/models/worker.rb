@@ -10,6 +10,9 @@ class Worker < ActiveRecord::Base
   has_one :contact_information
   accepts_nested_attributes_for :contact_information
 
+  has_attached_file :profile_picture, :styles => {:medium => "400x500", :thumb => "100x100"}
+  validates_attachment_content_type :profile_picture, :content_type => /\Aimage\/.*\Z/
+
   class << self
     def all_expertise
       [['Cook', 'cook'],
