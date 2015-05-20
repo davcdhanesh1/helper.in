@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'workers#index'
+  root 'workers#search'
   resources :workers
   get 'fooAdmin!2$' => 'sessions#new', :as => 'login'
   post 'fooAdmin!2$' => 'sessions#create'

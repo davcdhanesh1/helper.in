@@ -16,12 +16,12 @@
 
         <div id="password" class="row">
           <%= label_tag :password, "Password: " %>
-          <%= f.text_field :password %>
+          <%= f.password_field :password %>
         </div>
 
         <div id="login" class="row">
           <br>
-          <%= f.submit :login %>
+          <%= f.submit :login, class:'btn btn-lg btn-primary' %>
         </div> 
 
       <% end %>
