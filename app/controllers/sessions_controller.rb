@@ -6,11 +6,16 @@ class SessionsController < ApplicationController
     admin = Admin.find_by(email: params_for_admin_login[:email])
     if admin && admin.authenticate(params_for_admin_login[:password])
       log_in(admin)
-      redirect_to :workers
+      redirect_to root_url
     else
       flash.now[:errors] = ['Invalid email / password combination']
       render :new
     end
+  end
+
+  def destroy
+    log_out
+    redirect_to root_url
   end
 
   private
