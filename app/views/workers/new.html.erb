@@ -1,4 +1,3 @@
-<%= params.inspect %>
 <div id="new_worker" class="container">
   <div class="col-sm-4"></div>
   
@@ -44,7 +43,7 @@
 
       <div id="expertise" class="row">
         <%= label_tag :expertise, "Expertise: " %>
-        <%= f.select(:expertise, Worker.all_expertise, prompt: "------") %>
+        <%= f.select(:expertise, Worker.expertise_options, prompt: "------") %>
       </div>
 
       <hr>
