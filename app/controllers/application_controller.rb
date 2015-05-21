@@ -9,4 +9,9 @@ class ApplicationController < ActionController::Base
       redirect_to root_url
     end
   end
+
+  def render_404_page
+      render file: "#{Rails.root}/public/404", status: 404
+  end
+
 end

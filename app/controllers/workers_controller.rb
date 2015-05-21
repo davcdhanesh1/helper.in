@@ -8,7 +8,7 @@ class WorkersController < ApplicationController
   end
 
   def show
-    @worker = Worker.find(params[:id])
+    @worker = Worker.where(id: params[:id]).first or render_404_page
   end
 
   def create
@@ -45,4 +45,5 @@ class WorkersController < ApplicationController
     params.require(:worker).permit(:firstname, :sirname, :age, :educational_background, :work_background, :native_city,
                                    :expertise, :profile_picture )
   end
+
 end
