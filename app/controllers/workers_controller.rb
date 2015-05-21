@@ -13,12 +13,12 @@ class WorkersController < ApplicationController
 
   def create
     @worker = Worker.new(valid_params_for_worker) 
-    @contact_information = ContactInformation.new(valid_params_for_contact_information)
-    @verification_document = VerificationDocument.new(valid_params_for_verification_document)
-    @worker.contact_information = @contact_information
-    @worker.verification_document = @verification_document
+    contact_information = ContactInformation.new(valid_params_for_contact_information)
+    verification_document = VerificationDocument.new(valid_params_for_verification_document)
+    @worker.contact_information = contact_information
+    @worker.verification_document = verification_document
 
-    if @worker.valid? && @contact_information.valid? && @verification_document.valid?
+    if @worker.valid?
       @worker.save!
       redirect_to worker_url(@worker)
     else 
