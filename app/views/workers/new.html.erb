@@ -1,3 +1,4 @@
+<%= params.inspect %>
 <div id="new_worker" class="container">
   <div class="col-sm-4"></div>
   
@@ -53,7 +54,20 @@
       </div>
 
       <hr>
-      <div class="row"><b>Contact Information</b></div>
+      <%= f.fields_for @worker.verification_document do |ff| %>
+        <div id="verification_document_type" class="row">
+          <%= label_tag :verification_document_type, "Verification document Type: " %>
+          <%= ff.select(:document_type, VerificationDocument.document_options, prompt: "------") %>
+        </div>
+        <br>
+        <div id="document_picture" class="row">
+          <%= label_tag :verification_document_picture, "Verification document picture: " %>
+          <%= ff.file_field :picture %>
+        </div>
+      <% end %>
+
+      <hr>
+      <div id="contact_information" class="row"><b>Contact Information</b></div>
 
       <%= f.fields_for @worker.contact_information do |ff| %>
        
