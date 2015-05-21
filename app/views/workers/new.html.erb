@@ -43,7 +43,7 @@
 
       <div id="expertise" class="row">
         <%= label_tag :expertise, "Expertise: " %>
-        <%= f.select(:expertise, Worker.all_expertise) %>
+        <%= f.select(:expertise, Worker.all_expertise, prompt: "------") %>
       </div>
 
       <hr>

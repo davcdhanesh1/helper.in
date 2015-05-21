@@ -12,6 +12,7 @@ class Worker < ActiveRecord::Base
 
   has_attached_file :profile_picture, :styles => {:medium => "400x500", :thumb => "100x100"}
   validates_attachment_content_type :profile_picture, :content_type => /\Aimage\/.*\Z/
+  validates_attachment_presence :profile_picture
 
   class << self
     def all_expertise
