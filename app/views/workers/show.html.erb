@@ -6,6 +6,9 @@
 
       <div id="worker_profile_picture" class="col-sm-4 center">
         <%= image_tag @worker.profile_picture.url(:medium), class: "center" %>
+        <% if logged_in? %>
+          <%= link_to "Edit profile", edit_worker_url(@worker), class: "btn btn-lg btn-primary center" %>
+        <% end %>
       </div>
 
       <div id="worker_profile" class="col-sm-6">
