@@ -4,7 +4,7 @@
   <% end %>
 <% end %>
 
-<%= form_for @worker, url: {action: 'create'} do |f| %>
+<%= form_for @worker do |f| %>
 
   <div id="firstname" class="row">
     <%= label_tag :firstname, "Firstname: " %>
@@ -44,6 +44,9 @@
   <hr>
   <div id="profile_picture" class="row">
     <%= label_tag :profile_picture, "Profile picture: " %>
+    <div id="profile_picture_preview" class="picture_preview">
+      <%= image_tag @worker.profile_picture.url(:thumb), class: "center", alt: "Upload worker's profile picture" unless @worker.nil? %> 
+    </div>
     <%= f.file_field :profile_picture %>
   </div>
 
@@ -56,6 +59,9 @@
     <br>
     <div id="document_picture" class="row">
       <%= label_tag :verification_document_picture, "Verification document picture: " %>
+      <div id="verification_document_preview" class="picture_preview">
+        <%= image_tag @worker.verification_document.picture.url(:medium), alt: "Upload copy of verification document", class: "center" unless @worker.nil? %>
+      </div>
       <%= ff.file_field :picture %>
     </div>
   <% end %>
@@ -104,6 +110,6 @@
 
   <div id="create_button" class="row">
     <br>
-    <%= f.submit :create, class: 'btn btn-lg btn-success' %>
+    <%= f.submit :save, class: 'btn btn-lg btn-success' %>
   </div>
 <% end %>
