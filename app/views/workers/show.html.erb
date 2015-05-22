@@ -73,8 +73,12 @@
             <div class="row center table_heading">
               <b><%=label_tag :verification_document, "Verification document", class: "center" %></td></b>
             </div>
-            <div id="verification_document_picture" class="center">
-                <%= image_tag @worker.verification_document.picture.url(:medium), class: "center" %>
+            <div id="verification_document_picture">
+              <table class="table center table-responsive">
+                <tr>
+                  <td><%= image_tag @worker.verification_document.picture.url(:medium), class: "center" %></td>
+                </tr>
+              </table>
             </div>
           </div>
         <% end %>
