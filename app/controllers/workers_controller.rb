@@ -27,10 +27,6 @@ class WorkersController < ApplicationController
     end
   end
 
-  def search
-
-  end
-
   def edit
     @worker = Worker.where(id: params[:id] ).first or render_404_page
   end

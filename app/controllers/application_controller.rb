@@ -15,4 +15,8 @@ class ApplicationController < ActionController::Base
       render file: "#{Rails.root}/public/404", status: 404
   end
 
+  def home
+    render "layouts/home"
+  end
+
 end
