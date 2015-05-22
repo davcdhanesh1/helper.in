@@ -1,6 +1,19 @@
 // Place all the styles related to the workers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#worker_profile {
+  td {
+    width: 50%;
+  }
+}
+
+#worker_profile_picture {
+  margin-bottom: 2%;
+}
+
+.table_heading{
+  margin-bottom: 2%;
+}
 
 #form_for_new_worker{
   margin-top: 1%;
