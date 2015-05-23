@@ -19,6 +19,12 @@ html, body {
   height: 90%;
 }
 
+#search_form {
+  .find_helper_button {
+    fond-weight: bold;
+  }
+}
+
 #content {
   min-height: 100%;
   margin-bottom: -60px;
