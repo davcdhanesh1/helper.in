@@ -20,7 +20,7 @@ class WorkersController < ApplicationController
 
     if @worker.valid?
       @worker.save!
-      redirect_to worker_url(@worker)
+      redirect_to worker_path(@worker)
     else 
       flash.now[:errors] = @worker.errors.full_messages
       render :new
