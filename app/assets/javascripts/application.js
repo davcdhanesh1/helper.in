@@ -11,9 +11,17 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
 //= require bootstrap-sprockets
 //
-$('.selectpicker').selectpicker();
+
+var ready = function() {
+  $('.selectpicker').selectpicker();
+  search_form_validation();
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);
