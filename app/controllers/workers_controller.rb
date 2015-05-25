@@ -1,6 +1,10 @@
 class WorkersController < ApplicationController
   before_action :logged_in_as_admin, only: [:new, :create]
 
+  def search
+    @result = Worker.where(expertise: params[:expertise])
+  end
+
   def new
     @worker = Worker.new
     @worker.build_contact_information

@@ -8,9 +8,9 @@
         <div class="row"><p class="text-muted lead">What you are looking for ... </p></div>
       </div>
       <div id="search_form" class="row center" >
-        <%= form_tag("/search") do %>
-          <select name="expertise" class="selectpicker" data-width:"100%" data-live-search="true">
-            <option selected="selected">Select type of service</option>
+        <%= form_tag("/search", method: :get) do %>
+          <select name="expertise" class="selectpicker" data-width:"100%" data-live-search="true" required="required">
+            <option selected="selected" value="">Select type of service</option>
             <%= Worker.expertise_options.each do |option_pair| %>
               <option value=<%= option_pair[1] %> > <%= option_pair[0] %> </option> 
             <% end %>
