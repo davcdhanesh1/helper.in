@@ -1,19 +1,14 @@
 class VerificationDocument < ActiveRecord::Base
-  extend ApplicationHelper
 
   class << self
     
     def accepted_document_types
-      get_values_from_options_for_selection(document_options) 
-    end
-
-    def document_options 
-     [
-      ['Passport', 'passport'],
-      ['Driver license', 'driver-license'],
-      ['Nationality certificate', 'nationality'],
-      ['Adhar card', 'adhar-card']
-     ]
+      [
+        'passport',
+        'driver_license',
+        'nationality',
+        'adhar_card'
+      ]
     end
 
   end

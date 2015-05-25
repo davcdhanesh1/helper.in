@@ -38,7 +38,7 @@
 
   <div id="expertise" class="row">
     <%= label_tag :expertise, "Expertise: " %>
-    <%= f.select(:expertise, Worker.expertise_options, prompt: "------") %>
+    <%= f.select(:expertise, generate_option_value_pairs(Worker.accepted_expertise), prompt: "------") %>
   </div>
 
   <hr>
@@ -54,7 +54,7 @@
   <%= f.fields_for @worker.verification_document do |ff| %>
     <div id="verification_document_type" class="row">
       <%= label_tag :verification_document_type, "Verification document Type: " %>
-      <%= ff.select(:document_type, VerificationDocument.document_options, prompt: "------") %>
+      <%= ff.select(:document_type, generate_option_value_pairs(VerificationDocument.accepted_document_types), prompt: "------") %>
     </div>
     <br>
     <div id="document_picture" class="row">

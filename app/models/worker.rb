@@ -1,34 +1,28 @@
 class Worker < ActiveRecord::Base
-  extend ApplicationHelper
-
   class << self
     def accepted_expertise 
-      get_values_from_options_for_selection(expertise_options)
-    end
-
-    def expertise_options
-      [['Cook', 'cook'],
-       ['House maid', 'house-maid'],
-       ['Plumber', 'plumber'],
-       ['Electrician', 'electrician'],
-       ['Carpenter', 'carpenter'],
-       ['Painter', 'painter'],
-       ['Gardner', 'gardner' ],
-       ['Paste Control', 'paste-control'],
-       ['Security Guard', 'security-guard'],
-       ['Construction Worker', 'construction-worker'],
-       ['Driver', 'driver'],
-       ['Cleaners', 'cleaner'],
-       ['Raddiwala', 'raddiwala'],
-       ['Fabricator', 'fabricator'],
-       ['Glass Repair', 'glass-repair'],
-       ['Cushion / furniture repair', 'cushion-repair'],
-       ['Shoe maker', 'shoe-maker'],
-       ['Bhadaji / Pandit', 'bhataji-pandit'],
-       ['Legal work / lawyers', 'legal-work-lawyer'],
-       ['Dough Mill', 'mill-worker']
+      ['cook',
+       'house_maid',
+       'electrician',
+       'car_penter',
+       'painter',
+       'gardner',
+       'paste_control',
+       'security_guard',
+       'construction_worker',
+       'driver',
+       'cleaner',
+       'raddiwala',
+       'fabricator',
+       'glass_repair',
+       'cushion_repair',
+       'shoe_maker',
+       'bhataji_pandit',
+       'legal_work_lawyer',
+       'floor_mill'
       ]
     end
+
   end
 
   validates :firstname, presence: true
