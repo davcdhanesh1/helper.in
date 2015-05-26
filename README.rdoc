@@ -1,28 +1,7 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* To run this app, you must refer to https://github.com/davcdhanesh1/ansible-rails-setup this repo for setting up correct development evironment.
+* Once you are done with this, clone the source code at your desired location ( as per the above mentioned infra setup, it should be at /home/<username>/app )
+* run <tt>./bin/bundle install --path vendor/bundle </tt>
+* run <tt>./bin/bundle exec rake db:create db:migrate db:seed </tt>
+* Voila, open your browser and hit "http://192.168.33.10/"
